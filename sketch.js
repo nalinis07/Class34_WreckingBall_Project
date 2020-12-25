@@ -29,7 +29,7 @@ function preload () {
   // I can't see the background image as the buildng is skyscraper
   // will get to see after the building is demolished..
 
-  //backGrndImg = loadImage ("sprites/bg.png");
+  backGrndImg = loadImage ("crane1.png");
 
 } // end of fn preload ()
 
@@ -47,7 +47,7 @@ function setup() {
   // ( need to create this though all will be demolished soon ..:-)
   var i = 0;
   for (i = 0 ; i < 6 ; i++)
-      wreckWall[i]= new Apartment (900,100,70,70);
+      wreckWall[i]= new Apartment (900,100,40,40);
       console.log (i);
   for (i = i ; i < 12 ; i++)
     wreckWall[i]= new Apartment (800,100,70,70);
@@ -59,12 +59,15 @@ function setup() {
   wreckBall = new Ball (200,200,90,80);
 
   // create a strong rope and attach to the wrecking ball
-  wreckRope = new Rope (wreckBall.body, {x:500, y:50});
+  wreckRope = new Rope (wreckBall.body, {x:490, y:65});
 
 }  // end of fn setup ()
 
 function draw() {
   background("blue");   // clear sky .. bright sunny day.
+  imageMode (CENTER);
+  image (backGrndImg,300,150,400, 900);
+  //background(backGrndImg);   
 
   Engine.update (wreckEngine);
 
