@@ -11,6 +11,7 @@ class Apartment {
         }
         this.width = width;
         this.height = height;
+        this.image = loadImage ("ApartmentImg.png");
         this.body = Bodies.rectangle (x, y, this.width, this.height, boxOptions);
         World.add (wreckWorld, this.body);
 
@@ -27,12 +28,13 @@ class Apartment {
         translate (pos.x, pos.y);
         rotate (angle);
 
-        strokeWeight(4);
-        stroke ("cyan");
-        rectMode (CENTER);
-        fill ("purple");
-        rect (0,0,this.width, this.height);
-
+        //strokeWeight(4);
+        //stroke ("cyan");
+        //rectMode (CENTER);
+        //fill ("purple");
+        //rect (0,0,this.width, this.height);
+        imageMode (CENTER);
+        image (this.image,0,0,this.width, this.height);
         pop ();
         
     } // end of fn display ()
